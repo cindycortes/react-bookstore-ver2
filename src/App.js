@@ -33,7 +33,7 @@ class App extends Component {
     axios.patch(`http://localhost:8082/api/books/cart/remove/${id}`)
       .then(res => {
         let theOtherBooks = this.state.books.filter(book => book.id != id)
-        let orderedBooks = [...theOtherBooks, res.data].sort((a, b) => a.id > b.id)        
+        let orderedBooks = [...theOtherBooks, res.data].sort((a, b) => a.id > b.id)
         this.setState({ books: orderedBooks })
       })
   }
@@ -44,12 +44,15 @@ class App extends Component {
 
     return (
       <div className="App">
-        <TopNav />
-        <div className="row">
-          <div className="col"><BookList books={this.state.books}
-            addBookToCart={this.addBookToCart} /></div>
-          <div className="col"><Cart booksInCart={this.booksInCart()} removeBookFromCart={this.removeBookFromCart} /></div>
+      <TopNav />
+        <div className="container">
+          <div className="row">
+            <div className="col"><BookList books={this.state.books}
+              addBookToCart={this.addBookToCart} /></div>
+            <div className="col"><Cart booksInCart={this.booksInCart()} removeBookFromCart={this.removeBookFromCart} /></div>
+          </div>
         </div>
+
 
       </div>
 

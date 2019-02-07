@@ -21,14 +21,17 @@ class BookList extends Component {
 
         return (
             <div>
-                <input type="text" name="filterPhrase" onChange={this.handleChange} value={this.state.filterPhrase} />
-                <select name="type" onChange={this.handlechange} value={this.state.type}>
-                    <option value="title">Title</option>
-                    <option value="author">Author</option>
-                </select>
+           
 
-                {listOfBooks}
-            </div>
+                    <input type="text" name="filterPhrase" onChange={this.handleChange} value={this.state.filterPhrase} />
+                        <select name="type" onChange={this.handlechange} value={this.state.type}>
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                        </select>
+
+                    {listOfBooks}
+                </div>
+           
         )
     }
 }
