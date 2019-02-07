@@ -17,7 +17,9 @@ class App extends Component {
   async componentDidMount() {
     const response = await fetch(`http://localhost:8082/api/books`)
     const books = await response.json(); 
-    this.setState({ books })
+    this.setState({ books });
+  } catch (error) {
+    console.log(error);
   }
 
   addBookToCart = (id) => {
