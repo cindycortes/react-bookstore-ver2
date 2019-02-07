@@ -1,17 +1,17 @@
 import React from 'react'
+import { Card } from 'reactstrap'
 
 const CartItem = (props) => {
     return (
         <div>
-            <ul>
-                <li>Title: {props.item.title}</li>
-                <li>Price: {props.item.price} </li>
-                <button type="button" className="btn btn-danger"
-                    onClick={() => props.removeBookFromCart(props.item.id)}>
-                    
-                    Remove from Cart</button>
-            </ul>
-        </div>
+            <Card>
+                Title: {props.item.title} <br />
+                Price: ${props.item.price} <br />
+            </Card >
+           
+            <button type="button" className="btn btn-danger" onClick={() => props.removeBookFromCart(props.item.id)}>Remove from Cart</button>
+            
+        </div >
     )
 }
 
