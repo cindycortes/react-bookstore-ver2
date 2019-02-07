@@ -9,7 +9,7 @@ const Cart = (props) => {
 
     return(
         <div> <h4>Cart</h4> 
-            <b>Total (w/ tax):</b> {theTotal}
+            <b>Total (w/ tax):</b> ${theTotal}
            
             {listOfCartItems}
           
