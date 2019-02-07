@@ -1,10 +1,19 @@
-1. 
+* Installed reactstrap :    npm install --save reactstrap react react-dom
+    use:
+        import { NameOfElement } from 'reactstrap';
+    Resource: https://reactstrap.github.io/
 
-Implementing Async/await to React Component:
+*
+
+
+* Implementing Async/await to React Component:
 
  async componentDidMount() {
     const response = await fetch(`https://api.coinmarketcap.com/v1/ticker/?limit=10`);
     const json = await response.json();
     this.setState({ data: json });
   }
+
+Resource: https://www.valentinog.com/blog/how-async-await-in-react/
+
 
