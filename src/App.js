@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import TopNav from './components/TopNav';
 import BookList from './components/BookList';
 import Cart from './components/Cart'
-// import { Row, Col } from 'reactstrap';
 import axios from 'axios'
 
 
@@ -22,27 +21,38 @@ class App extends Component {
   }
 
   addBookToCart = (id) => {
-    axios.patch(`http://localhost:8082/api/books`)
-    .then(res => {
-      let theOtherBooks = this.state.books.filter(book => book.id != id)
-      this.setState({ books: [...theOtherBooks, res.data] })
-    })
+    axios.patch(`http://localhost:8082/api/books/cart/add/${id}`)
+      .then(res => {
+        let theOtherBooks = this.state.books.filter(book => book.id != id)
+        let orderedBooks = [...theOtherBooks, res.data].sort((a, b) => a.id > b.id)
+        this.setState({ books: orderedBooks })
+      })
+  }
+
+  removeBookFromCart = (id) => {
+    axios.patch(`http://localhost:8082/api/books/cart/remove/${id}`)
+      .then(res => {
+        let theOtherBooks = this.state.books.filter(book => book.id != id)
+        let orderedBooks = [...theOtherBooks, res.data].sort((a, b) => a.id > b.id)        
+        this.setState({ books: orderedBooks })
+      })
   }
 
 
   render() {
     console.log('booksInCart', this.booksInCart())
 
-    return ( 
-    <div className="App">
-      <TopNav />
-      {/* <div className="row">
-        <div className="col"><BookList /></div>
-        <div className="col"><Cart /></div>
-      </div> */}
+    return (
+      <div className="App">
+        <TopNav />
+        <div className="row">
+          <div className="col"><BookList books={this.state.books}
+            addBookToCart={this.addBookToCart} /></div>
+          <div className="col"><Cart booksInCart={this.booksInCart()} removeBookFromCart={this.removeBookFromCart} /></div>
+        </div>
 
-    </div>
-     
+      </div>
+
 
     );
   }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {Navbar, NavbarBrand} from 'reactstrap';
+
 
 
 const TopNav = (props) => {
   
     return (
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">BookStore</NavbarBrand>
-        </Navbar>  
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="#">Book Store</a>
+      </nav> 
     )
   
 }
