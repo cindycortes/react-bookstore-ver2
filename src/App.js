@@ -14,10 +14,10 @@ class App extends Component {
 
   booksInCart = () => this.state.books.filter(book => book.inCart)
 
-  componentDidMount() {
-    fetch(`http://localhost:8082/api/books`)
-      .then(res => res.json())
-      .then(books => this.setState({ books }))
+  async componentDidMount() {
+    const response = await fetch(`http://localhost:8082/api/books`)
+    const books = await response.json(); 
+    this.setState({ books })
   }
 
   addBookToCart = (id) => {
