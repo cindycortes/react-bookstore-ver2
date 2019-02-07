@@ -8,7 +8,7 @@ const Cart = (props) => {
     let theTotal = props.booksInCart.reduce((acc, item) => acc + item.price, 0)
 
     return(
-        <div> <h4>Cart</h4> 
+        <div> <h4>Cart Items: </h4> 
             <b>Total (w/ tax):</b> ${theTotal}
            
             {listOfCartItems}

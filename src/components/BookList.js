@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Book from './Book'
+import { Card } from 'reactstrap'
 
 class BookList extends Component {
     state = { // need state to track the value
@@ -18,7 +19,7 @@ class BookList extends Component {
 
     render() {
         let listOfBooks = this.props.books
-            .filter(book => book[this.state.type].includes(this.state.filterPhrase))
+            .filter(book => book.author.includes(this.state.filterPhrase) || book.title.includes(this.state.filterPhrase))
             .map(book => <Book key={book.id} book={book} addBookToCart={this.props.addBookToCart} />)
 
         return (

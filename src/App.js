@@ -44,7 +44,7 @@ class App extends Component {
 
     return (
       <div className="App">
-      <TopNav />
+        <TopNav />
         <div className="container">
           <div className="row">
             <div className="col"><BookList books={this.state.books}
