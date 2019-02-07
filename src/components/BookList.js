@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Book from './Book'
-import { Card } from 'reactstrap'
+import { Input } from 'reactstrap'
+
 
 class BookList extends Component {
     state = { // need state to track the value
@@ -25,12 +26,11 @@ class BookList extends Component {
         return (
             <div>
            
-
-                    <input type="text" name="filterPhrase" onChange={this.handleChange} value={this.state.filterPhrase} />
-                        <select name="type" onChange={this.handlechange} value={this.state.type}>
+                    <Input type="text" className="searchBar" name="filterPhrase" onChange={this.handleChange} value={this.state.filterPhrase} bsSize="lg" placeholder="Search by Title or Author" />
+                        {/* <select name="type" onChange={this.handlechange} value={this.state.type}>
                             <option value="title">Title</option>
                             <option value="author">Author</option>
-                        </select>
+                        </select> */}
 
                     {listOfBooks}
                 </div>
