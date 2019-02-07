@@ -4,7 +4,9 @@ import Book from './Book'
 class BookList extends Component {
     state = { // need state to track the value
         filterPhrase: '',
-        type: 'title'
+        type: 'title' 
+        
+
     }
 
     handleChange = event => {

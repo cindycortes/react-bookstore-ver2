@@ -8,9 +8,11 @@ const Cart = (props) => {
     let theTotal = props.booksInCart.reduce((acc, item) => acc + item.price, 0)
 
     return(
-        <div> Cart:
+        <div> <h4>Cart</h4> 
+            <b>Total (w/ tax):</b> {theTotal}
+           
             {listOfCartItems}
-            Total (w/ tax): {theTotal}
+          
         </div>
     )
 }
