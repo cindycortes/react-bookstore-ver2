@@ -7,7 +7,9 @@ const Book = (props) => {
         <div>
             <p>
                 <Card>
-                    Title: {props.book.title}<br/>
+                    <h5>{props.book.title}</h5>
+
+                    <i>{props.book.subtitle} </i>
 
                     Author: {props.book.author}<br/>
 

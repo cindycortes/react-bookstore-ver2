@@ -17,3 +17,11 @@
 Resource: https://www.valentinog.com/blog/how-async-await-in-react/
 
 
+Fetch vs Axios
+- .fetch() has a two step process when hadling JSON data.
+- First is to make the actual request 
+- Second is to call the .json() method on the response. 
+- Axios just returns the data object you would expect. 
+
+/* filter() calls a provided callback function once for each element in an array, 
+  and constructs a new array of all the values for which callback returns a value that coerces to true. */
