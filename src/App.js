@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import TopNav from './components/TopNav';
 import BookList from './components/BookList';
-import Cart from './components/Cart'
-import axios from 'axios'
+import Cart from './components/Cart';
+import axios from 'axios';
 
 
 class App extends Component {
